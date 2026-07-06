@@ -1,0 +1,357 @@
+{% extends "base.html" %}
+
+{% block title %}RDI - Rebreather Day 1 | Simple. Affordable. Accessible.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="fade-in">
+                Rebreather <span class="highlight-red">Day 1</span>
+            </h1>
+            <p class="subtitle fade-in-delay">
+                Simple. Affordable. Accessible.<br>
+                Mendemokratisasi teknologi rebreather untuk penyelam dari berbagai level
+            </p>
+            <div class="cta-buttons fade-in-delay-2">
+                <a href="{{ url_for('products_page') }}" class="btn btn-primary">View Equipment</a>
+                <a href="{{ url_for('book_demo') }}" class="btn btn-secondary">Book a Demo</a>
+            </div>
+        </div>
+        
+        <!-- Featured Product -->
+        <!-- Featured Product -->
+        <div class="featured-product">
+            <div class="tech-ring">
+                <div class="product-glow"></div>
+                <img src="{{ url_for('static', filename='images/rd1-product.png') }}" alt="RDI Rebreather System" class="product-float">
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bubbles -->
+    <div class="bubbles">
+        <div class="bubble" style="width: 20px; height: 20px; left: 10%; animation-duration: 8s;"></div>
+        <div class="bubble" style="width: 35px; height: 35px; left: 25%; animation-duration: 12s; animation-delay: 2s;"></div>
+        <div class="bubble" style="width: 15px; height: 15px; left: 40%; animation-duration: 6s; animation-delay: 1s;"></div>
+        <div class="bubble" style="width: 45px; height: 45px; left: 55%; animation-duration: 14s; animation-delay: 3s;"></div>
+        <div class="bubble" style="width: 25px; height: 25px; left: 70%; animation-duration: 9s; animation-delay: 2s;"></div>
+        <div class="bubble" style="width: 30px; height: 30px; left: 85%; animation-duration: 11s; animation-delay: 4s;"></div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="mission-section">
+    <div class="container">
+        <div class="mission-content">
+            <h2 class="section-title">
+                Our <span class="highlight-red">Mission</span>
+            </h2>
+            <p class="mission-text">
+                RD1 menyediakan platform rebreather yang <strong>sederhana, terjangkau, dan mudah diakses</strong> bagi penyelam dari berbagai level—dari pemula hingga profesional. 
+                Filosofi utama kami adalah mengubah paradigma bahwa <span class="highlight-red">rebreather itu rumit dan mahal</span>, dengan menawarkan jalur pembelajaran yang dimulai dari oksigen rebreather di air dangkal sebelum berkembang ke sistem mixed-gas yang lebih canggih.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose RD1 -->
+<section class="why-choose-section">
+    <div class="container">
+        <h2 class="section-title">
+            Why Choose <span class="highlight-green">RD1</span>
+        </h2>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                </div>
+                <h3>Open Source Architecture</h3>
+                <p>Dapat dengan mudah berkembang dari unit oksigen dangkal menjadi mixed-gas CCR. Fleksibel untuk upgrade sesuai kebutuhan.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                </div>
+                <h3>1-Day Training</h3>
+                <p>Hanya membutuhkan satu hari pelatihan untuk menguasai dasar-dasar rebreather. Sederhana dan intuitif.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                </div>
+                <h3>Affordable</h3>
+                <p>Dirancang sebagai pintu masuk yang tidak mahal ke dunia rebreather. Teknologi premium dengan harga terjangkau.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <h3>ISO9001 Certified</h3>
+                <p>Semua komponen kritis diproduksi oleh pabrikan bersertifikat ISO9001. CE EN250 certified untuk safety maksimal.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technology Section -->
+<section class="technology-section">
+    <div class="container">
+        <h2 class="section-title">
+            How <span class="highlight-red">It Works</span>
+        </h2>
+        
+        <div class="tech-content">
+            <div class="tech-description">
+                <p class="tech-intro">
+                    RD1 adalah <strong>closed circuit oxygen rebreather</strong> yang bekerja dengan sistem daur ulang gas pernapasan:
+                </p>
+                <ul class="tech-list">
+                    <li><span class="highlight-green">✓</span> Oksigen ditambahkan otomatis melalui katup demand valve</li>
+                    <li><span class="highlight-green">✓</span> CO₂ dihilangkan oleh scrubber berisi sorbent</li>
+                    <li><span class="highlight-green">✓</span> Gas didaur ulang dalam loop tertutup</li>
+                    <li><span class="highlight-green">✓</span> Sistem bailout terpisah untuk emergency</li>
+                </ul>
+            </div>
+            
+            <div class="tech-specs">
+                <div class="spec-box">
+                    <h4>Duration</h4>
+                    <p class="spec-value highlight-green">5 Hours</p>
+                    <p class="spec-label">Scrubber Capacity</p>
+                </div>
+                <div class="spec-box">
+                    <h4>Max Depth</h4>
+                    <p class="spec-value highlight-red">6 Meters</p>
+                    <p class="spec-label">Oxygen Configuration</p>
+                </div>
+                <div class="spec-box">
+                    <h4>Weight</h4>
+                    <p class="spec-value">~18 kg</p>
+                    <p class="spec-label">Total Setup</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Applications Section -->
+<section class="applications-section">
+    <div class="container">
+        <h2 class="section-title">
+            Applications & <span class="highlight-green">Use Cases</span>
+        </h2>
+        
+        <div class="applications-grid">
+            <div class="app-card">
+                <div class="app-icon">📸</div>
+                <h3>Underwater Photography</h3>
+                <p>Silent operation tanpa gelembung. Tidak menakut-nakuti biota laut. Durasi panjang untuk hasil terbaik.</p>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🔬</div>
+                <h3>Scientific Research</h3>
+                <p>Ideal untuk marine research, citizen science, dan observasi bawah air jangka panjang.</p>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🐚</div>
+                <h3>Marine Harvesting</h3>
+                <p>Perfect untuk aquaculture, pemanenan kerang, rumput laut, dan pekerjaan profesional.</p>
+            </div>
+            
+            <div class="app-card">
+                <div class="app-icon">🎓</div>
+                <h3>Training & Education</h3>
+                <p>Pintu masuk ideal untuk belajar rebreather. Digunakan di program diving universitas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Features -->
+<section class="key-features-section">
+    <div class="container">
+        <h2 class="section-title">
+            Key <span class="highlight-red">Features</span>
+        </h2>
+        
+        <div class="features-list">
+            <div class="feature-item">
+                <div class="feature-number">01</div>
+                <div class="feature-detail">
+                    <h4>Back-Mounted Design</h4>
+                    <p>Spine aluminium kompatibel dengan backplate dan harness standar. Mudah dipasang dan nyaman digunakan.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-number">02</div>
+                <div class="feature-detail">
+                    <h4>Advanced Scrubber System</h4>
+                    <p>Desain aksial dengan kapasitas 5.5 lbs sorbent. Durasi hingga 5 jam per dive.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-number">03</div>
+                <div class="feature-detail">
+                    <h4>Automatic Oxygen Addition</h4>
+                    <p>Katup demand valve otomatis menjaga volume loop dan mengganti oksigen yang dikonsumsi.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-number">04</div>
+                <div class="feature-detail">
+                    <h4>Independent Bailout System</h4>
+                    <p>Tabung AL13 terpisah dengan 2nd stage regulator balanced. Safety first!</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-number">05</div>
+                <div class="feature-detail">
+                    <h4>Flood Tolerant Design</h4>
+                    <p>Dirancang untuk lingkungan kerja yang keras. Tahan banjir dan mudah di-evakuasi.</p>
+                </div>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-number">06</div>
+                <div class="feature-detail">
+                    <h4>Optional Monitoring</h4>
+                    <p>Dapat mengakomodasi 1-3 sensor oksigen untuk tracking pO₂ real-time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Training Section -->
+<section class="training-section">
+    <div class="container">
+        <div class="training-content">
+            <h2 class="section-title">
+                1-Day <span class="highlight-green">Training</span>
+            </h2>
+            <p class="training-text">
+                RD1 dirancang dengan filosofi <strong>"Day 1"</strong>—rebreather yang bisa Anda kuasai dalam satu hari pelatihan. 
+                Pelatihan mencakup dasar-dasar rebreather, assembly, pre-dive checks, dan prosedur keselamatan.
+            </p>
+            
+            <div class="training-highlights">
+                <div class="highlight-box">
+                    <span class="highlight-number">1</span>
+                    <span class="highlight-text">Day Training</span>
+                </div>
+                <div class="highlight-box">
+                    <span class="highlight-number">6m</span>
+                    <span class="highlight-text">Max Depth (O₂)</span>
+                </div>
+                <div class="highlight-box">
+                    <span class="highlight-number">5hrs</span>
+                    <span class="highlight-text">Bottom Time</span>
+                </div>
+            </div>
+            
+            <div class="cta-center">
+                <a href="{{ url_for('book_demo') }}" class="btn btn-primary btn-large">Book Training Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Safety Section -->
+<section class="safety-section">
+    <div class="container">
+        <h2 class="section-title">
+            Safety & <span class="highlight-red">Certification</span>
+        </h2>
+        
+        <div class="safety-grid">
+            <div class="safety-card">
+                <div class="safety-icon">🛡️</div>
+                <h3>Certified Components</h3>
+                <p>First stage dan 2nd stage bersertifikat CE EN250. Semua komponen kritis dari pabrikan ISO9001.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">🚨</div>
+                <h3>Bailout System</h3>
+                <p>Sistem bailout terpisah dengan 2nd stage regulator. "When in Doubt, Bailout!"</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">⚠️</div>
+                <h3>Depth Limitation</h3>
+                <p>Maksimum 6 meter untuk oxygen configuration mencegah risiko hyperoxia.</p>
+            </div>
+            
+            <div class="safety-card">
+                <div class="safety-icon">💧</div>
+                <h3>Flood Tolerant</h3>
+                <p>Desain tahan banjir dengan pompa evakuasi air opsional pada scrubber.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products Preview -->
+<section class="products-preview">
+    <div class="container">
+        <h2 class="section-title">
+            Our <span class="highlight-green">Products</span>
+        </h2>
+        
+        <div class="products-grid">
+            {% for product in products[:3] %}
+            <div class="product-card">
+                <div class="hud-corner top-left"></div>
+                <div class="hud-corner bottom-right"></div>
+                
+                <div class="category-badge">{{ product.category }}</div>
+                
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                </div>
+                
+                <div class="product-info">
+                    <h3>{{ product.name }}</h3>
+                    <p class="product-desc">{{ product.description }}</p>
+                    
+                    <div class="product-specs">
+                        <span class="spec">Depth: {{ product.depth_rating }}</span>
+                        <span class="spec">Duration: {{ product.duration }}</span>
+                    </div>
+                    
+                    <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-secondary btn-small">Learn More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-3">
+            <a href="{{ url_for('products_page') }}" class="btn btn-primary btn-large">View All Products</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Ready to Start Your <span class="highlight-green">Rebreather Journey</span>?</h2>
+        <p>Join the revolution. Experience diving like never before with RD1.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('book_demo') }}" class="btn btn-primary btn-large">Book a Demo</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-secondary btn-large">Contact Specialist</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

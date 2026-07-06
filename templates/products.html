@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block title %}RDI Equipment Catalog | Rebreather Day 1{% endblock %}
+
+{% block content %}
+<!-- Products Catalog Section -->
+<section class="products-catalog">
+    <div class="container">
+        <div class="catalog-header">
+            <h1 class="section-title">
+                RDI <span class="highlight-red">Equipment</span> <span class="highlight-green">Catalog</span>
+            </h1>
+            <p class="catalog-subtitle">
+                Professional rebreather systems engineered for every diving discipline
+            </p>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="category-filter">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="Backmount">Backmount</button>
+            <button class="filter-btn" data-category="Deepdive">Deepdive</button>
+            <button class="filter-btn" data-category="Chest Mount">Chest Mount</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid catalog-grid">
+            {% for product in products %}
+            <div class="product-card catalog-card" data-category="{{ product.category }}">
+                <!-- HUD Corners -->
+                <div class="hud-corner top-left"></div>
+                <div class="hud-corner bottom-right"></div>
+
+                <!-- Category Badge -->
+                <div class="category-badge">{{ product.category }}</div>
+
+                <div class="product-image">
+                    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+                </div>
+                
+                <div class="product-info">
+                    <h3>{{ product.name }}</h3>
+                    <p class="product-desc">{{ product.description }}</p>
+                    
+                    <div class="product-specs">
+                        <span class="spec">O₂: {{ product.o2_range }}</span>
+                        <span class="spec">Depth: {{ product.depth_rating }}</span>
+                        <span class="spec">Duration: {{ product.duration }}</span>
+                    </div>
+
+                    <div class="product-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            {% for feature in product.features %}
+                            <li>{{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <div class="product-footer">
+                        <span class="product-price">{{ product.price }}</span>
+                        <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-primary btn-small">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Comparison Section -->
+<section class="comparison-section">
+    <div class="container">
+        <h2 class="section-title">
+            Quick <span class="highlight-red">Comparison</span>
+        </h2>
+        
+        <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Category</th>
+                        <th>Max Depth</th>
+                        <th>Duration</th>
+                        <th>Weight</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td><strong>{{ product.name }}</strong></td>
+                        <td>{{ product.category }}</td>
+                        <td class="highlight-green">{{ product.depth_rating }}</td>
+                        <td>{{ product.duration }}</td>
+                        <td>{{ product.weight }}</td>
+                        <td class="highlight-red">{{ product.price }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Need Help Choosing?</h2>
+        <p>Our diving specialists can help you select the perfect rebreather for your needs</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">Contact Specialist</a>
+            <a href="{{ url_for('book_demo') }}" class="btn btn-secondary btn-large">Book a Demo</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
