@@ -1633,3 +1633,537 @@ body {
         padding: 1.5rem 1.2rem;
     }
 }
+/* ========================================
+   TESTIMONIAL SECTION
+   ======================================== */
+   .testimonial-section {
+    padding: 6rem 0;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(211, 47, 47, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(46, 125, 50, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+    position: relative;
+}
+
+.testimonial-card {
+    display: flex;
+    gap: 3rem;
+    background: rgba(10, 31, 48, 0.6);
+    border: 1px solid var(--rdi-grey);
+    padding: 3rem;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+}
+
+/* HUD Corners untuk Testimonial Card */
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid var(--rdi-red);
+    border-left: 2px solid var(--rdi-red);
+}
+
+.testimonial-card::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-bottom: 2px solid var(--rdi-green);
+    border-right: 2px solid var(--rdi-green);
+}
+
+.testimonial-image-wrapper {
+    flex-shrink: 0;
+    width: 280px;
+    height: 280px;
+    position: relative;
+}
+
+.testimonial-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* Efek glow di belakang foto */
+.image-border-glow {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--rdi-red), var(--rdi-green));
+    z-index: 1;
+    opacity: 0.5;
+    filter: blur(10px);
+}
+
+.testimonial-content {
+    flex-grow: 1;
+    position: relative;
+}
+
+.quote-icon {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 5rem;
+    color: var(--rdi-red);
+    opacity: 0.2;
+    font-family: serif;
+    line-height: 1;
+}
+
+.testimonial-content h3 {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.instructor-title {
+    color: var(--rdi-green);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.point {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.point-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--rdi-green);
+    margin-top: 2px;
+}
+
+.point-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.point p {
+    color: var(--text-dim);
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Responsive Testimonial */
+@media (max-width: 992px) {
+    .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .testimonial-image-wrapper {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+    }
+    
+    .point {
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonial-section {
+        padding: 4rem 0;
+    }
+    
+    .testimonial-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .quote-icon {
+        font-size: 4rem;
+        top: -10px;
+    }
+}
+
+/* ========================================
+   MAINTENANCE & CARE SECTION
+   ======================================== */
+   .maintenance-section {
+    padding: 6rem 0;
+    background: 
+        radial-gradient(ellipse at 20% 50%, rgba(255, 107, 157, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(46, 125, 50, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 100%);
+    position: relative;
+}
+
+.maintenance-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    line-height: 1.8;
+}
+
+/* Maintenance Gallery */
+.maintenance-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid var(--rdi-grey);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    aspect-ratio: 4/3;
+}
+
+.gallery-item:hover {
+    border-color: var(--rdi-red);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(0, 0, 0, 0.7) 50%,
+        transparent 100%
+    );
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+}
+
+.gallery-overlay h4 {
+    color: var(--rdi-red);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.gallery-overlay p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Maintenance Steps */
+.maintenance-steps {
+    margin-bottom: 5rem;
+}
+
+.steps-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step-card {
+    background: rgba(10, 31, 48, 0.6);
+    border: 1px solid var(--rdi-grey);
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.step-card:hover {
+    border-color: var(--rdi-green);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(46, 125, 50, 0.2);
+}
+
+.step-number {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--rdi-red);
+    opacity: 0.2;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1.5rem;
+    color: var(--rdi-green);
+    background: rgba(46, 125, 50, 0.1);
+    border-radius: 50%;
+    padding: 12px;
+    border: 2px solid var(--rdi-green);
+}
+
+.step-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.step-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.step-card p {
+    color: var(--rdi-grey);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Scrubber Guide */
+.scrubber-guide {
+    margin-bottom: 5rem;
+}
+
+.scrubber-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.scrubber-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.info-box {
+    background: rgba(10, 31, 48, 0.6);
+    border: 1px solid var(--rdi-grey);
+    border-left: 4px solid var(--rdi-green);
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+}
+
+.info-box.warning {
+    border-left-color: var(--rdi-red);
+    background: rgba(211, 47, 47, 0.05);
+}
+
+.info-box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.info-box ul,
+.info-box ol {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box ul li,
+.info-box ol li {
+    color: var(--text-dim);
+    padding: 0.6rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.info-box ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--rdi-green);
+    font-weight: bold;
+}
+
+.info-box ol {
+    counter-reset: item;
+}
+
+.info-box ol li {
+    counter-increment: item;
+}
+
+.info-box ol li::before {
+    content: counter(item) '.';
+    position: absolute;
+    left: 0;
+    color: var(--rdi-green);
+    font-weight: bold;
+}
+
+.info-box strong {
+    color: var(--rdi-green);
+}
+
+.info-box.warning strong {
+    color: var(--rdi-red);
+}
+
+.scrubber-image {
+    position: sticky;
+    top: 100px;
+}
+
+.scrubber-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid var(--rdi-grey);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.image-caption {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(10, 31, 48, 0.6);
+    border-radius: 5px;
+    border-left: 3px solid var(--rdi-green);
+}
+
+.image-caption p {
+    color: var(--rdi-grey);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Maintenance Schedule Table */
+.maintenance-schedule {
+    margin-bottom: 2rem;
+}
+
+.schedule-table-wrapper {
+    overflow-x: auto;
+    margin-top: 3rem;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(10, 31, 48, 0.7);
+    border: 1px solid var(--rdi-grey);
+    backdrop-filter: blur(5px);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(158, 158, 158, 0.2);
+}
+
+.schedule-table th {
+    background: rgba(211, 47, 47, 0.2);
+    color: var(--rdi-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.schedule-table tr:hover {
+    background: rgba(46, 125, 50, 0.1);
+}
+
+.schedule-table td {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+.schedule-table td strong {
+    color: var(--text-light);
+}
+
+/* Responsive Maintenance */
+@media (max-width: 992px) {
+    .scrubber-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .scrubber-image {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .maintenance-section {
+        padding: 4rem 0;
+    }
+    
+    .maintenance-gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-title {
+        font-size: 1.7rem;
+    }
+    
+    .schedule-table th,
+    .schedule-table td {
+        padding: 1rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
