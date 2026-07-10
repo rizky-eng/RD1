@@ -2167,3 +2167,283 @@ body {
         font-size: 0.85rem;
     }
 }
+/* ========================================
+   RDI IN ACTION SECTION
+   ======================================== */
+   .rdi-action-section {
+    padding: 6rem 0;
+    background: 
+        radial-gradient(ellipse at 15% 20%, rgba(211, 47, 47, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 80%, rgba(46, 125, 50, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-mid) 50%, var(--bg-deep) 100%);
+    position: relative;
+}
+
+.action-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    line-height: 1.8;
+}
+
+/* Professions Grid */
+.professions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.profession-card {
+    background: rgba(10, 31, 48, 0.7);
+    border: 1px solid var(--rdi-grey);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.profession-card:hover {
+    border-color: var(--rdi-red);
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(211, 47, 47, 0.2);
+}
+
+/* HUD Corners untuk Profession Card */
+.profession-card::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    border-top: 2px solid var(--rdi-red);
+    border-left: 2px solid var(--rdi-red);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.profession-card::after {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 25px;
+    height: 25px;
+    border-bottom: 2px solid var(--rdi-green);
+    border-right: 2px solid var(--rdi-green);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.profession-card:hover::before,
+.profession-card:hover::after {
+    width: 35px;
+    height: 35px;
+    box-shadow: 0 0 10px currentColor;
+}
+
+/* Profession Image */
+.profession-image {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.profession-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.profession-card:hover .profession-image img {
+    transform: scale(1.1);
+}
+
+.profession-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.profession-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(211, 47, 47, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    backdrop-filter: blur(5px);
+}
+
+.profession-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Profession Content */
+.profession-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profession-icon {
+    width: 55px;
+    height: 55px;
+    color: var(--rdi-green);
+    background: rgba(46, 125, 50, 0.1);
+    border-radius: 50%;
+    padding: 12px;
+    border: 2px solid var(--rdi-green);
+    margin-bottom: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.profession-card:hover .profession-icon {
+    transform: rotate(360deg) scale(1.1);
+    box-shadow: 0 0 20px rgba(46, 125, 50, 0.4);
+}
+
+.profession-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.profession-content h3 {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+    font-weight: 800;
+}
+
+.profession-tagline {
+    color: var(--rdi-red);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.profession-desc {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Benefits List */
+.profession-benefits {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(158, 158, 158, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.benefit:hover {
+    transform: translateX(5px);
+}
+
+.benefit-check {
+    color: var(--rdi-green);
+    font-weight: bold;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* Action CTA */
+.action-cta {
+    text-align: center;
+    background: rgba(10, 31, 48, 0.6);
+    border: 1px solid var(--rdi-grey);
+    padding: 3rem 2rem;
+    backdrop-filter: blur(5px);
+    position: relative;
+}
+
+.action-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--rdi-red) 0%,
+        var(--rdi-green) 100%
+    );
+}
+
+.action-cta h3 {
+    font-size: 1.8rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.action-cta p {
+    color: var(--rdi-grey);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .professions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .rdi-action-section {
+        padding: 4rem 0;
+    }
+    
+    .professions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .action-cta h3 {
+        font-size: 1.4rem;
+    }
+    
+    .profession-content h3 {
+        font-size: 1.3rem;
+    }
+}

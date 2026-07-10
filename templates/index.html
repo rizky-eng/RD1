@@ -174,7 +174,192 @@
         </div>
     </div>
 </section>
+<!-- RDI In Action Section - Real World Applications -->
+<section class="rdi-action-section">
+    <div class="container">
+        <h2 class="section-title">
+            RD1 <span class="highlight-red">In</span> <span class="highlight-green">Action</span>
+        </h2>
+        
+        <p class="action-intro">
+            Dari penelitian ilmiah hingga operasi profesional di kedalaman laut — 
+            RD1 Rebreather telah dipercaya oleh para ahli di berbagai bidang untuk mendukung misi-misi penting mereka.
+        </p>
 
+        <!-- Professions Grid -->
+        <div class="professions-grid">
+            <!-- Marine Biologist -->
+            <div class="profession-card">
+                <div class="profession-image">
+                    <img src="{{ url_for('static', filename='images/marinebiologist.jpeg') }}" alt="Marine Biologist">
+                    <div class="profession-overlay">
+                        <span class="profession-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22s8-10 12-10 8 10 8 10"></path><path d="M12 2a10 10 0 0 1 10 10"></path></svg>
+                            Research
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="profession-content">
+                    <div class="profession-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3>Marine Biologist</h3>
+                    <p class="profession-tagline">Peneliti Ekosistem Laut</p>
+                    <p class="profession-desc">
+                        Mendukung penelitian jangka panjang di ekosistem sensitif tanpa mengganggu biota laut. 
+                        Ideal untuk observasi perilaku hewan dan pengambilan sampel ilmiah.
+                    </p>
+                    
+                    <div class="profession-benefits">
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Operasi senyap - tidak menakuti biota</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Tanpa gelembung - observasi natural</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Durasi 5 jam untuk penelitian mendalam</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cave Explorer -->
+            <div class="profession-card">
+                <div class="profession-image">
+                    <img src="{{ url_for('static', filename='images/caveeksplorer.jpeg') }}" alt="Cave Explorer">
+                    <div class="profession-overlay">
+                        <span class="profession-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Exploration
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="profession-content">
+                    <div class="profession-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <h3>Cave Explorer</h3>
+                    <p class="profession-tagline">Penjelajah Gua Bawah Laut</p>
+                    <p class="profession-desc">
+                        Menjelajahi sistem gua bawah laut dengan kepercayaan diri. 
+                        RD1 dapat di-upgrade ke SCR/mCCR untuk penetrasi gua yang lebih dalam.
+                    </p>
+                    
+                    <div class="profession-benefits">
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Arsitektur open source - mudah upgrade</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Flood tolerant untuk kondisi ekstrem</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Bailout system untuk keselamatan maksimal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Underwater HSE/Operational -->
+            <div class="profession-card">
+                <div class="profession-image">
+                    <img src="{{ url_for('static', filename='images/HSEScuba.jpeg') }}" alt="Underwater HSE Operational">
+                    <div class="profession-overlay">
+                        <span class="profession-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                            Professional
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="profession-content">
+                    <div class="profession-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </div>
+                    <h3>Underwater HSE</h3>
+                    <p class="profession-tagline">Operasional & Keselamatan Kerja</p>
+                    <p class="profession-desc">
+                        Solusi andal untuk pekerjaan profesional bawah air — 
+                        inspeksi, maintenance, marine harvesting, dan akuakultur dengan efisiensi tinggi.
+                    </p>
+                    
+                    <div class="profession-benefits">
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Komponen ISO9001 & CE EN250 certified</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Desain rugged untuk lingkungan kerja</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Biaya operasional rendah & modular</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marine Photographer -->
+            <div class="profession-card">
+                <div class="profession-image">
+                    <img src="{{ url_for('static', filename='images/marinephotographer.jpeg') }}" alt="Marine Photographer">
+                    <div class="profession-overlay">
+                        <span class="profession-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                            Creative
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="profession-content">
+                    <div class="profession-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    </div>
+                    <h3>Marine Photographer</h3>
+                    <p class="profession-tagline">Fotografer Bawah Air</p>
+                    <p class="profession-desc">
+                        Abadikan momen bawah air tanpa gangguan. 
+                        Operasi senyap tanpa gelembung memungkinkan pendekatan dekat dengan subjek paling pemalu sekalipun.
+                    </p>
+                    
+                    <div class="profession-benefits">
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Zero bubbles - frame bersih sempurna</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Silent approach untuk subjek liar</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-check">✓</span>
+                            <span>Waktu panjang untuk sesi foto ideal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA for Professions -->
+        <div class="action-cta">
+            <h3>Temukan Konfigurasi RD1 yang Tepat untuk Profesi Anda</h3>
+            <p>Konsultasikan kebutuhan spesifik Anda dengan tim ahli kami</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">Konsultasi Gratis</a>
+                <a href="{{ url_for('products_page') }}" class="btn btn-secondary">Lihat Produk</a>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Key Features -->
 <section class="key-features-section">
     <div class="container">
@@ -302,6 +487,61 @@
         </div>
     </div>
 </section>
+<!-- Testimonial Section -->
+<section class="testimonial-section">
+    <div class="container">
+        <h2 class="section-title">
+            Kata <span class="highlight-red">Ahli</span> & <span class="highlight-green">Instructor</span>
+        </h2>
+        
+        <div class="testimonial-card">
+            <div class="testimonial-image-wrapper">
+                <!-- Pastikan simpan foto Rizky di static/images/ dengan nama instructor-rizky.jpg -->
+                <img src="{{ url_for('static', filename='images/rizkisarmada.jpg') }}" alt="Instructor Rizky Sarmada">
+                <div class="image-border-glow"></div>
+            </div>
+            
+            <div class="testimonial-content">
+                <div class="quote-icon">"</div>
+                <h3>Instructor Rizky Sarmada</h3>
+                <p class="instructor-title">Professional Rebreather Instructor</p>
+                
+                <div class="testimonial-points">
+                    <div class="point">
+                        <span class="point-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Sistem injeksi gas otomatis bekerja sangat baik saat volume gas di dalam loop berkurang.</p>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Katup ADV (Automatic Diluent Valve) berfungsi dengan sangat responsif dan andal.</p>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Sangat nyaman dipakai dan bobotnya ringan, memberikan mobilitas tinggi di dalam air.</p>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Desainnya sangat modular, membuat proses perawatan dan upgrade komponen jauh lebih mudah.</p>
+                    </div>
+                    <div class="point">
+                        <span class="point-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        </span>
+                        <p>Berdasarkan karakteristiknya, konfigurasi mount ini sangat tangguh dan siap menghadapi berbagai kondisi penyelaman.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Maintenance & Care Section -->
 <section class="maintenance-section">
@@ -312,7 +552,7 @@
         
         <p class="maintenance-intro">
             Perawatan yang benar adalah kunci keselamatan dan performa optimal rebreather Anda. 
-            Ikuti panduan maintenance RDI untuk memastikan setiap penyelaman berjalan aman dan lancar.
+            Ikuti panduan maintenance RD1 untuk memastikan setiap penyelaman berjalan aman dan lancar.
         </p>
 
         <!-- Maintenance Gallery -->
@@ -457,7 +697,7 @@
                 <div class="scrubber-image">
                     <img src="{{ url_for('static', filename='images/canister.jpg') }}" alt="Scrubber Canister Detail">
                     <div class="image-caption">
-                        <p>Scrubber canister transparan RDI memungkinkan visualisasi langsung kondisi sorbent</p>
+                        <p>Scrubber canister transparan RD1 memungkinkan visualisasi langsung kondisi sorbent</p>
                     </div>
                 </div>
             </div>
@@ -566,61 +806,6 @@
     </div>
 </section>
 
-<!-- Testimonial Section -->
-<section class="testimonial-section">
-    <div class="container">
-        <h2 class="section-title">
-            Kata <span class="highlight-red">Ahli</span> & <span class="highlight-green">Instructor</span>
-        </h2>
-        
-        <div class="testimonial-card">
-            <div class="testimonial-image-wrapper">
-                <!-- Pastikan simpan foto Rizky di static/images/ dengan nama instructor-rizky.jpg -->
-                <img src="{{ url_for('static', filename='images/rizkisarmada.jpg') }}" alt="Instructor Rizky Sarmada">
-                <div class="image-border-glow"></div>
-            </div>
-            
-            <div class="testimonial-content">
-                <div class="quote-icon">"</div>
-                <h3>Instructor Rizky Sarmada</h3>
-                <p class="instructor-title">Professional Rebreather Instructor</p>
-                
-                <div class="testimonial-points">
-                    <div class="point">
-                        <span class="point-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                        <p>Sistem injeksi gas otomatis bekerja sangat baik saat volume gas di dalam loop berkurang.</p>
-                    </div>
-                    <div class="point">
-                        <span class="point-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                        <p>Katup ADV (Automatic Diluent Valve) berfungsi dengan sangat responsif dan andal.</p>
-                    </div>
-                    <div class="point">
-                        <span class="point-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                        <p>Sangat nyaman dipakai dan bobotnya ringan, memberikan mobilitas tinggi di dalam air.</p>
-                    </div>
-                    <div class="point">
-                        <span class="point-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                        <p>Desainnya sangat modular, membuat proses perawatan dan upgrade komponen jauh lebih mudah.</p>
-                    </div>
-                    <div class="point">
-                        <span class="point-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </span>
-                        <p>Berdasarkan karakteristiknya, konfigurasi mount ini sangat tangguh dan siap menghadapi berbagai kondisi penyelaman.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- CTA Section -->
 <section class="cta-section">
