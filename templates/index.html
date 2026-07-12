@@ -766,46 +766,6 @@
     </div>
 </section>
 
-<!-- Products Preview -->
-<section class="products-preview">
-    <div class="container">
-        <h2 class="section-title">
-            Our <span class="highlight-green">Products</span>
-        </h2>
-        
-        <div class="products-grid">
-            {% for product in products[:3] %}
-            <div class="product-card">
-                <div class="hud-corner top-left"></div>
-                <div class="hud-corner bottom-right"></div>
-                
-                <div class="category-badge">{{ product.category }}</div>
-                
-                <div class="product-image">
-                    <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
-                </div>
-                
-                <div class="product-info">
-                    <h3>{{ product.name }}</h3>
-                    <p class="product-desc">{{ product.description }}</p>
-                    
-                    <div class="product-specs">
-                        <span class="spec">Depth: {{ product.depth_rating }}</span>
-                        <span class="spec">Duration: {{ product.duration }}</span>
-                    </div>
-                    
-                    <a href="{{ url_for('product_detail', product_id=product.id) }}" class="btn btn-secondary btn-small">Learn More</a>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        
-        <div class="text-center mt-3">
-            <a href="{{ url_for('products_page') }}" class="btn btn-primary btn-large">View All Products</a>
-        </div>
-    </div>
-</section>
-
 
 <!-- CTA Section -->
 <section class="cta-section">

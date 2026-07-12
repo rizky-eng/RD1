@@ -2170,7 +2170,7 @@ body {
 /* ========================================
    RDI IN ACTION SECTION
    ======================================== */
-   .rdi-action-section {
+.rdi-action-section {
     padding: 6rem 0;
     background: 
         radial-gradient(ellipse at 15% 20%, rgba(211, 47, 47, 0.08) 0%, transparent 50%),
@@ -2445,5 +2445,18 @@ body {
     
     .profession-content h3 {
         font-size: 1.3rem;
+    }
+}
+/* ========================================
+   FIX: MOBILE NAVBAR OVERLAP
+   (Tambahkan di paling bawah file style.css)
+   ======================================== */
+   @media (max-width: 768px) {
+    .hero {
+        padding-top: 12rem !important; 
+    }
+
+    .products-catalog {
+        padding-top: 12rem !important;
     }
 }
