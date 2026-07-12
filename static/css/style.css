@@ -30,12 +30,22 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     color: var(--text-light);
     overflow-x: hidden;
     background: var(--bg-deep);
     line-height: 1.6;
+}
+
+main {
+    min-height: auto;
+    overflow: visible;
 }
 
 /* ========================================
@@ -237,9 +247,23 @@ body {
 .logo {
     display: flex;
     align-items: center;
-}
+        gap: 1rem;
+    }
 
-.logo a {
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar-slogan {
+        color: var(--rdi-grey);
+        font-size: 0.85rem;
+        letter-spacing: 0.06em;
+        line-height: 1.2;
+        margin: 0;
+        text-transform: none;
+        opacity: 0.95;
     display: inline-block;
     text-decoration: none;
 }
@@ -438,6 +462,190 @@ body {
     margin-bottom: 3rem;
 }
 
+.contact-page {
+    padding: 6rem 0 4rem;
+}
+
+.contact-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.contact-info {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.8rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(211, 47, 47, 0.25);
+}
+
+.contact-card h3 {
+    margin-bottom: 0.8rem;
+    color: white;
+    font-size: 1.15rem;
+}
+
+.contact-card p {
+    color: var(--rdi-grey);
+    line-height: 1.7;
+}
+
+.contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 22px 90px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.4rem;
+}
+
+.contact-form label {
+    color: var(--rdi-grey);
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: white;
+    padding: 1rem 1.1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: rgba(211, 47, 47, 0.7);
+    box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.12);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+/* Email fallback modal */
+.email-fallback {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+}
+.email-fallback.open {
+    display: flex;
+}
+.email-fallback .modal-content {
+    background: linear-gradient(180deg, rgba(10,31,48,0.95), rgba(2,11,20,0.98));
+    border: 1px solid rgba(255,255,255,0.06);
+    padding: 1.5rem;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+}
+.email-fallback .modal-close {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.4rem;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+}
+.email-fallback .modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+@media (max-width: 950px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card,
+    .contact-form-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar .container {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .contact-page {
+        padding: 4.5rem 0 3rem;
+    }
+
+    .contact-header {
+        padding: 0 1rem;
+    }
+
+    .contact-grid {
+        gap: 1.5rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+
+    .contact-card {
+        padding: 1.4rem;
+    }
+
+    .contact-form .form-row {
+        margin-bottom: 1.2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.95rem 1rem;
+        font-size: 0.92rem;
+    }
+}
+
 /* --- FEATURED PRODUCT - DEEP SEA FLASHLIGHT EFFECT --- */
 .featured-product {
     margin-top: 1rem;
@@ -524,6 +732,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
+    pointer-events: none;
 }
 
 .bubble {
@@ -533,6 +742,7 @@ body {
     border-radius: 50%;
     border: 1px solid rgba(255, 255, 255, 0.15);
     animation: rise 10s infinite ease-in;
+    pointer-events: none;
 }
 
 @keyframes rise {
@@ -2448,15 +2658,206 @@ body {
     }
 }
 /* ========================================
-   FIX: MOBILE NAVBAR OVERLAP
-   (Tambahkan di paling bawah file style.css)
+   CONTACT PAGE STYLES
    ======================================== */
-   @media (max-width: 768px) {
+
+.contact-page {
+    padding-top: 120px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 59, 48, 0.2), rgba(52, 199, 89, 0.2));
+    border-radius: 12px;
+    color: #34c759;
+}
+
+.contact-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.contact-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.contact-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.hours-note {
+    font-size: 0.85rem !important;
+    opacity: 0.6;
+    margin-top: 0.25rem;
+}
+
+.contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-row label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-row input,
+.form-row textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: #34c759;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-row textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
     .hero {
-        padding-top: 12rem !important; 
+        padding-top: 12rem !important;
     }
 
     .products-catalog {
         padding-top: 12rem !important;
     }
+
+    .contact-page {
+        padding-top: 140px !important;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .contact-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact-card {
+        padding: 1.25rem;
+    }
+
+    .contact-form-wrapper {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-page {
+        padding-top: 120px !important;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--rdi-red);
+    letter-spacing: 1px;
+}
+
+.navbar-slogan {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    margin: 0;
 }

@@ -24,10 +24,13 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <!-- Logo RDI Image -->
                 <a href="{{ url_for('index') }}">
-                    <img src="{{ url_for('static', filename='images/rd1-logo.png') }}" alt="RDI - Rebreather Day 1" class="logo-img">
+                    <img src="{{ url_for('static', filename='images/rd1-logo.png') }}" alt="RDI" class="logo-img">
                 </a>
+                <div class="logo-text">
+                    <span class="brand-name">RD1</span>
+                    <p class="navbar-slogan">have fun with the RD1 Rebreather</p>
+                </div>
             </div>
             <ul class="nav-links">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -38,6 +41,15 @@
 
     <!-- Main Content -->
     <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="container flash-messages">
+            {% for category, message in messages %}
+            <div class="flash-message {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
         {% block content %}{% endblock %}
         
         <!-- Scroll Indicator -->

@@ -70,3 +70,54 @@ document.querySelectorAll('.product-card, .feature').forEach(el => {
 });
 
 console.log('🌊 Sasya Rebreather - Deep Dive Experience Loaded');
+
+// Attempt to open device email client via mailto. If it fails, show fallback modal with webmail options.
+function openEmail(to) {
+    const subject = encodeURIComponent('Inquiry from Website');
+    const body = encodeURIComponent('\n\n--\nThis message was started from the RD1 website contact button.');
+    const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+
+    // Try to navigate to mailto
+    window.location.href = mailto;
+
+    // After a short delay, show fallback options for webmail
+    setTimeout(() => {
+        const modal = document.getElementById('email-fallback-modal');
+        if (modal) {
+            modal.classList.add('open');
+        }
+    }, 800);
+}
+
+// Open email using an element's href (mailto). Safer when subject is built in the link.
+function openEmailFromElement(el) {
+    try {
+        const href = el.getAttribute('href');
+        if (!href) return;
+        window.location.href = href;
+        setTimeout(() => {
+            const modal = document.getElementById('email-fallback-modal');
+            if (modal) modal.classList.add('open');
+        }, 800);
+    } catch (e) {
+        console.error('openEmailFromElement error', e);
+    }
+}
+
+// Close fallback modal
+function closeEmailFallback() {
+    const modal = document.getElementById('email-fallback-modal');
+    if (modal) modal.classList.remove('open');
+}
+
+// Close modal when clicking outside content
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('email-fallback-modal');
+    if (!modal) return;
+    if (modal.classList.contains('open')) {
+        const content = modal.querySelector('.modal-content');
+        if (content && !content.contains(e.target)) {
+            closeEmailFallback();
+        }
+    }
+});

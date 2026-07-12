@@ -1,6 +1,8 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect, flash
 
 app = Flask(__name__)
+# Secret key untuk session flash messages (ganti dengan nilai aman di produksi)
+app.secret_key = 'replace-with-a-secure-secret'
 
 # Data 5 Produk Rebreather RDI
 products = [
@@ -93,9 +95,34 @@ def product_detail(product_id):
 def book_demo():
     return render_template('demo.html')
 
-@app.route('/contact')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html')
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
+        # Simpan pesan ke file sederhana — bisa diganti dengan pengiriman email atau DB
+        try:
+            with open('contact_messages.txt', 'a', encoding='utf-8') as f:
+                f.write(f"Name: {name}\nEmail: {email}\nSubject: {subject}\nMessage: {message}\n---\n")
+        except Exception as e:
+            # Jangan crash; informasikan pengguna jika gagal
+            flash('Terjadi kesalahan saat mengirim pesan. Coba lagi nanti.', 'error')
+            return redirect(url_for('contact'))
+
+        flash('Pesan Anda telah terkirim. Terima kasih!', 'success')
+        return redirect(url_for('contact'))
+
+    # Prefill behavior when coming from other pages (e.g., Book a Demo)
+    source = request.args.get('source')
+    prefill_subject = None
+    prefill_message = None
+    if source == 'demo':
+        prefill_subject = 'Book a Demo'
+        prefill_message = 'Halo, saya ingin memesan demo RD1. Mohon hubungi saya untuk jadwal dan detail lebih lanjut.'
+
+    return render_template('contact.html', prefill_subject=prefill_subject, prefill_message=prefill_message)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)

@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Contact RD1 | Rebreather Day 1{% endblock %}
+
+{% block content %}
+<section class="unified-section contact-page">
+    <div class="container">
+        
+        <!-- Hero Header -->
+        <div class="hero-content">
+            <h1 class="section-title fade-in">
+                Contact <span class="highlight-red">RD1</span> <span class="highlight-green">Support</span>
+            </h1>
+            <p class="subtitle fade-in-delay">
+                We're here to help you find the right rebreather and plan your training session. 
+                Send us a message or use the contact information below to get in touch with our team.
+            </p>
+        </div>
+
+        <!-- Bubbles Animation -->
+        <div class="bubbles">
+            <div class="bubble" style="width: 20px; height: 20px; left: 10%; animation-duration: 8s;"></div>
+            <div class="bubble" style="width: 35px; height: 35px; left: 25%; animation-duration: 12s; animation-delay: 2s;"></div>
+            <div class="bubble" style="width: 15px; height: 15px; left: 40%; animation-duration: 6s; animation-delay: 1s;"></div>
+            <div class="bubble" style="width: 45px; height: 45px; left: 55%; animation-duration: 14s; animation-delay: 3s;"></div>
+            <div class="bubble" style="width: 25px; height: 25px; left: 70%; animation-duration: 9s; animation-delay: 2s;"></div>
+            <div class="bubble" style="width: 30px; height: 30px; left: 85%; animation-duration: 11s; animation-delay: 4s;"></div>
+        </div>
+
+        <!-- Contact Grid -->
+        <div class="unified-block">
+            <div class="contact-grid">
+                
+                <!-- Contact Info Cards -->
+                <div class="contact-info">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p class="contact-detail">sales@rd1systems.com</p>
+                        <div class="card-actions">
+                            <a href="mailto:sales@rd1systems.com?subject={{ (prefill_subject or 'Inquiry from Website')|replace(' ', '%20') }}" target="_blank" rel="noopener" class="btn btn-primary btn-small" onclick="openEmailFromElement(this)">Email</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card fade-in-delay">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p class="contact-detail">+62 877 7538 2824</p>
+                        <div class="card-actions">
+                            <a href="https://wa.me/6287775382824" target="_blank" rel="noopener" class="btn btn-primary btn-small">Chat on WhatsApp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card fade-in-delay-2">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p class="contact-detail">Jl. Laut Dalam No. 12, Bali, Indonesia</p>
+                        <div class="card-actions">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Laut+Dalam+No.+12,+Bali,+Indonesia" target="_blank" rel="noopener" class="btn btn-outline btn-small">View on Map</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card fade-in-delay-2">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Operating Hours</h3>
+                        <p><span class="highlight-green">24/7 — All Day, Every Day</span></p>
+                        <p class="hours-note">We're always available to assist you</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper fade-in-delay">
+                    <form class="contact-form" action="#" method="post">
+                        <div class="form-row">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your email address" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Inquiry or request" value="{{ prefill_subject or '' }}" required>
+                        </div>
+                        <div class="form-row">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required>{{ prefill_message or '' }}</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Quick Action CTA -->
+        <div class="unified-block">
+            <div class="action-cta">
+                <h3>Need <span class="highlight-red">Immediate</span> Assistance?</h3>
+                <p>Our support team is available 24/7 to help you with any questions about RD1 rebreathers</p>
+                    <div class="cta-buttons">
+                    <a href="mailto:sales@rd1systems.com?subject={{ (prefill_subject or 'Inquiry from Website')|replace(' ', '%20') }}" target="_blank" rel="noopener" class="btn btn-primary" onclick="openEmailFromElement(this)">Email Now</a>
+                    <a href="https://wa.me/6287775382824" target="_blank" rel="noopener" class="btn btn-secondary">Chat on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Email fallback modal (shown if mailto doesn't open) -->
+<div id="email-fallback-modal" class="email-fallback">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeEmailFallback()">×</button>
+        <h3>Can't open your email app?</h3>
+        <p>If your device didn't open an email app automatically, you can compose using a webmail service:</p>
+        <div class="modal-actions">
+            <a id="gmail-link" class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@rd1systems.com&su={{ (prefill_subject or 'Inquiry from Website')|replace(' ', '%20') }}" target="_blank" rel="noopener">Open in Gmail</a>
+            <a id="outlook-link" class="btn btn-outline" href="https://outlook.live.com/owa/?path=/mail/action/compose&to=sales@rd1systems.com&subject={{ (prefill_subject or 'Inquiry from Website')|replace(' ', '%20') }}" target="_blank" rel="noopener">Open in Outlook</a>
+        </div>
+        <p style="margin-top:0.75rem; font-size:0.9rem; opacity:0.85;">Or ensure your device has a default Mail app set.</p>
+    </div>
+</div>
+{% endblock %}
