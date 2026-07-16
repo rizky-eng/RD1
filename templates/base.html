@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}RDI - Rebreather Day 1 | Deep Dive Equipment{% endblock %}</title>
+    
+    <!-- ✅ TAMBAHAN: Favicon untuk tab browser -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/rd1avatar.png') }}">
+    <!-- ✅ TAMBAHAN: Untuk tampilan ikon saat di-save ke Home Screen HP (iOS/Apple) -->
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/rd1avatar.png') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
